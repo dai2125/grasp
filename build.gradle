@@ -1,0 +1,59 @@
+plugins {
+	id 'java'
+	id 'org.springframework.boot' version '3.3.4'
+	id 'io.spring.dependency-management' version '1.1.6'
+	id 'org.openjfx.javafxplugin' version '0.1.0'
+}
+
+javafx {
+	version = "22.0.1"
+	modules = [ 'javafx.controls' ]
+}
+
+group = 'com.aigner'
+version = '0.0.1-SNAPSHOT'
+
+java {
+	toolchain {
+		languageVersion = JavaLanguageVersion.of(21)
+	}
+}
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.apache.kafka:kafka-streams'
+	implementation 'org.springframework.kafka:spring-kafka'
+	runtimeOnly 'org.postgresql:postgresql'
+
+//	testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
+//	testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testImplementation 'org.springframework.kafka:spring-kafka-test'
+//	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+
+//	testImplementation 'org.assertj:assertj-core:3.24.2'
+
+	implementation 'com.fazecast:jSerialComm:[2.0.0,3.0.0)'
+
+	implementation 'de.sfuhrm:radiobrowser4j:3.1.0' // Beispiel-Version, prüfen welche aktuell ist
+
+	// JLayer for MP3 playback
+	implementation 'javazoom:jlayer:1.0.1'
+
+//	implementation project(':radio')
+
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
+
+test {
+	useJUnitPlatform()
+}
