@@ -64,6 +64,7 @@ test {
 sonarqube {
 	properties {
 		property "sonar.projectKey", "grasp" // Dein Projekt-Key
+		property "sonar.projectName", "grasp"
 		property "sonar.host.url", "http://localhost:9000"
 		property "sonar.login", "sqp_69741cb6c955fa8a46422edee6301fd50decd1d7" // Dein Token
 	}
