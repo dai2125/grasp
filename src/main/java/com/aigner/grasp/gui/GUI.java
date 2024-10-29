@@ -1,12 +1,8 @@
 package com.aigner.grasp.gui;
 
-import javax.imageio.ImageIO;
+import org.springframework.stereotype.Component;
+
 import javax.swing.*;
-import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.InputStream;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 
 public class GUI {
 

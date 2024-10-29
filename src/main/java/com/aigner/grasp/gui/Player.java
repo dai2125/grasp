@@ -1,6 +1,6 @@
 package com.aigner.grasp.gui;
 
-import com.aigner.grasp.StatePattern.PlayerState;
+import com.aigner.grasp.statePattern.PlayerState;
 
 import javax.swing.*;
 import java.awt.*;

@@ -5,9 +5,33 @@ public class Info {
     // TODO Radio kann letzten Song abspielen, sollte beim nächsten Song aber den Pointer(Zeiger) auf den tatsächlichen nächsten Song haben
     // TODO Aktuell keine Überprüfungen über Größe des ArrayList<>()
     // TODO Schreibe erste Test zum überprüfen
+    // TODO Interceptor Pattern könnte für die Validierung verwendet werden
+    // TODO Validierung füge != null != empty hinzu
+    // TODO SonarQube Test hat mich aufmerksam gemacht ein Template Pattern zu verwenden um Code Duplications zu verringern
+    // TODO Kühlschrank ist noch nicht vollständig und fertig
 
     /*
-    * Wie tragen GRASP/SOLID konkret zur Testbarkeit von Code bei.
+        * Wie tragen GRASP/SOLID konkret zur Testbarkeit von Code bei.
+    */
+
+    /*
+        * CREATOR
+        * CONTROLLER
+        * INFORMATION EXPERT
+        * POLYMORPHISM
+        * PURE FABRICATION
+        * PROTECTED VARIATIONS
+        * INDIRECTION
+        * LOW COUPLING
+        * HIGH COHESION
+    */
+
+    /*
+        * SINGLE RESPONSIBILITY PRINCIPLE
+        * OPEN-CLOSED PRINCIPLE
+        * LISKOV SUBSTITUTION PRINCIPLE
+        * INTERFACE SEGREGATION PRINCIPLE
+        * DEPENDENCY INVERSION PRINCIPLE
     */
 
     /*

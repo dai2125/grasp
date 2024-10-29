@@ -1,6 +1,6 @@
 package com.aigner.grasp.gui;
 
-import com.aigner.grasp.StatePattern.PlayerState;
+import com.aigner.grasp.statePattern.PlayerState;
 
 public class NorthState implements PlayerState {
 
@@ -15,6 +15,6 @@ public class NorthState implements PlayerState {
         }
 //        player.setY(player.getY() - y);
         movement++;
-        System.out.println(movement);
+//        System.out.println(movement);
     }
 }

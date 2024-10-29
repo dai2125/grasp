@@ -3,6 +3,7 @@ plugins {
 	id 'org.springframework.boot' version '3.3.4'
 	id 'io.spring.dependency-management' version '1.1.6'
 	id 'org.openjfx.javafxplugin' version '0.1.0'
+	id "org.sonarqube" version "5.1.0.4882"
 }
 
 javafx {
@@ -47,6 +48,8 @@ dependencies {
 	implementation 'javazoom:jlayer:1.0.1'
 
 //	implementation project(':radio')
+	implementation 'ch.qos.logback:logback-classic:1.4.12'
+
 
 }
 
@@ -56,4 +59,12 @@ tasks.named('test') {
 
 test {
 	useJUnitPlatform()
+}
+
+sonarqube {
+	properties {
+		property "sonar.projectKey", "grasp" // Dein Projekt-Key
+		property "sonar.host.url", "http://localhost:9000"
+		property "sonar.login", "sqp_69741cb6c955fa8a46422edee6301fd50decd1d7" // Dein Token
+	}
 }

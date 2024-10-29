@@ -3,14 +3,14 @@ package com.aigner.grasp.radio;
 import de.sfuhrm.radiobrowser4j.*;
 import javazoom.jl.decoder.JavaLayerException;
 import javazoom.jl.player.advanced.AdvancedPlayer;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -23,6 +23,8 @@ public class StreamAudio {
     RadioHistory radioHistory;
     private int counter = 0;
     private ArrayList<String> radioList = new ArrayList<String>();
+
+    private static final Logger LOGGER = LoggerFactory.getLogger(StreamAudio.class);
 
 
     public StreamAudio() {
@@ -64,7 +66,7 @@ public class StreamAudio {
                         // playStream(s.getUrl()); // Beispiel-Funktion zum Abspielen
                     });
         } catch (Exception e) {
-            e.printStackTrace();
+            LOGGER.error("An error occurred while printing from StreamAudio all the Radio Stations", e);
         }
     }
 
@@ -75,7 +77,7 @@ public class StreamAudio {
             System.out.println("Playing: " + streamUrl);
             player.play();
         } catch (JavaLayerException | IOException e) {
-            e.printStackTrace();
+            LOGGER.error("An error occurred while play stream from StreamAudio", e);
             throw new RuntimeException(e);
         }
     }
@@ -93,7 +95,7 @@ public class StreamAudio {
                 System.out.println("StreamAudio playStream: " + streamUrl);
                 player.play();
             } catch (JavaLayerException | IOException e) {
-                e.printStackTrace();
+                LOGGER.error("An error occurred while play stream from StreamAudio", e);
             }
         });
         playThread.start();
@@ -151,7 +153,7 @@ public class StreamAudio {
                     System.out.println("StreamAudio lastRadioStation(): " + content);
                     player.play();
                 } catch (JavaLayerException | IOException e) {
-                    e.printStackTrace();
+                    LOGGER.error("An error occurred while lastRadioStation from StreamAudio", e);
                 }
             });
         }

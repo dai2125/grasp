@@ -1,12 +1,10 @@
 package com.aigner.grasp;
 
-import com.aigner.grasp.Fridge.Fridge;
-import com.aigner.grasp.JSerialComm.DummySerialSender;
+import com.aigner.grasp.fridge.Fridge;
+import com.aigner.grasp.jSerialComm.DummySerialSender;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-
-import java.util.Date;
 
 @SpringBootTest
 public class TestFridge {

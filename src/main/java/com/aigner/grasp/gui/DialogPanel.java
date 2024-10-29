@@ -1,6 +1,6 @@
 package com.aigner.grasp.gui;
 
-import com.aigner.grasp.Fridge.FridgeService;
+import com.aigner.grasp.fridge.FridgeService;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
@@ -17,7 +17,6 @@ public class DialogPanel extends JPanel {
     JButton consumeSubmitButton = new JButton("Submit Consume");
 
     JTextField addTextField = new JTextField(15);
-
 
     public DialogPanel() {
         fridgeService = new FridgeService();
@@ -54,7 +53,7 @@ public class DialogPanel extends JPanel {
 
         JPanel addCard = new JPanel();
         addCard.add(new JLabel("This is the add dialog"));
-        JTextField addTextField = new JTextField(15);
+        addTextField = new JTextField(15);
         addCard.add(addTextField);
         JButton addSubmitButton = new JButton("Submit Add");
         addSubmitButton.addActionListener(new ActionListener() {
@@ -108,6 +107,6 @@ public class DialogPanel extends JPanel {
     private void sendAddToFridge() {
         String item = addTextField.getText();
         System.out.println("DialogPanel sendAddToFridge(): " + item);
-        fridgeService.consumeItem(item);
+        fridgeService.addItem(item);
     }
 }
